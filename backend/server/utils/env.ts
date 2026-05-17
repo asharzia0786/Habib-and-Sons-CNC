@@ -18,6 +18,8 @@ const envSchema = z.object({
   CLERK_SECRET_KEY: z.preprocess(emptyToUndefined, z.string().min(1).optional()),
   RESEND_API_KEY: z.preprocess(emptyToUndefined, z.string().optional()),
   EMAIL_FROM: z.preprocess(emptyToUndefined, z.string().optional()),
+  EMAIL_INQUIRIES: z.preprocess(emptyToUndefined, z.string().optional()),
+  EMAIL_ORDERS: z.preprocess(emptyToUndefined, z.string().optional()),
   CLOUDINARY_CLOUD_NAME: z.preprocess(emptyToUndefined, z.string().optional()),
   CLOUDINARY_API_KEY: z.preprocess(emptyToUndefined, z.string().optional()),
   CLOUDINARY_API_SECRET: z.preprocess(emptyToUndefined, z.string().optional()),

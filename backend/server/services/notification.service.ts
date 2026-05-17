@@ -39,7 +39,7 @@ function paragraph(text: string): string {
   return `<p>${text}</p>`;
 }
 
-async function sendEmail(input: { to: string; subject: string; html: string; replyTo?: string }) {
+async function sendEmail(input: { to: string; subject: string; html: string; replyTo?: string; from?: string }) {
   try {
     const resend = getResendClient();
     const payload: {
@@ -49,7 +49,7 @@ async function sendEmail(input: { to: string; subject: string; html: string; rep
       html: string;
       replyTo?: string;
     } = {
-      from: fromAddress(),
+      from: input.from || fromAddress(),
       to: input.to,
       subject: input.subject,
       html: input.html,
@@ -132,8 +132,10 @@ export class NotificationService {
     orderId: string;
     amount: number;
   }): Promise<void> {
+    const ordersFrom = env.EMAIL_ORDERS || "orders@habibandsons.com";
     await sendEmail({
       to: input.to,
+      from: ordersFrom,
       subject: `Order received (#${input.orderId.slice(0, 8)})`,
       html: emailShell(
         "We received your order",
@@ -192,10 +194,12 @@ export class NotificationService {
     subject: string;
     message: string;
   }): Promise<void> {
+    const inquiriesFrom = env.EMAIL_INQUIRIES || "inquiries@habibandsons.com";
     await sendEmail({
       to: input.to,
       subject: input.subject,
-      replyTo: fromAddress(),
+      from: inquiriesFrom,
+      replyTo: inquiriesFrom,
       html: emailShell(
         "Your inquiry response",
         paragraph(escapeHtml(input.message).replace(/\n/g, "<br />")),
@@ -208,9 +212,11 @@ export class NotificationService {
     subject: string;
     message: string;
   }): Promise<void> {
+    const inquiriesFrom = env.EMAIL_INQUIRIES || "inquiries@habibandsons.com";
     await sendEmail({
       to: input.to,
       subject: input.subject,
+      from: inquiriesFrom,
       html: `
         <p>${input.message.replace(/\n/g, "<br />")}</p>
         <p>— Habib and Sons</p>
