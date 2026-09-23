@@ -2,12 +2,6 @@
 
 A full-stack e-commerce platform for luxury CNC furniture with custom order management, built with React + Vite + Express + PostgreSQL.
 
-## 🚀 Quick Links
-
-- **[API Documentation](./API_GUIDE.md)** - Complete API reference with all endpoints
-- **[Setup Guide](./SETUP_GUIDE.md)** - Step-by-step local development setup
-- **[Technologies](#-tech-stack)** - Full list of technologies used
-
 ## 📋 Features
 
 - **Product Catalog** - Browse luxury furniture with advanced filtering
@@ -61,8 +55,6 @@ npm run dev
 # 3. Open http://localhost:5173
 ```
 
-**Full Setup Guide:** See [SETUP_GUIDE.md](./SETUP_GUIDE.md)
-
 ## 📚 API Reference
 
 All API endpoints documented with examples:
@@ -72,8 +64,6 @@ All API endpoints documented with examples:
 - **Custom Orders API** - Bespoke furniture requests
 - **Inquiries API** - Customer inquiries
 - **Media API** - Secure image uploads
-
-**Complete Reference:** See [API_GUIDE.md](./API_GUIDE.md)
 
 ## 🏗️ Project Structure
 
@@ -94,9 +84,6 @@ All API endpoints documented with examples:
 │   │   ├── lib/              # Utilities & API client
 │   │   └── App.tsx            # Main component
 │   └── vite.config.ts
-│
-├── API_GUIDE.md              # Complete API documentation
-└── SETUP_GUIDE.md            # Setup instructions
 ```
 
 ## 🔧 Environment Configuration
@@ -121,9 +108,6 @@ CLOUDINARY_API_SECRET=xxx
 VITE_API_BASE_URL=http://localhost:4000/api
 VITE_CLERK_PUBLISHABLE_KEY=pk_test_xxx
 ```
-
-**Detailed Configuration:** See [API_GUIDE.md Environment Configuration](./API_GUIDE.md#environment-configuration)
-
 ## 📖 Common Commands
 
 ### Backend
@@ -150,8 +134,6 @@ npm run lint             # Run ESLint
 ### Frontend
 - **Vercel** (recommended), **Netlify**, **GitHub Pages**
 
-**Deployment Guide:** See [API_GUIDE.md Deployments](./API_GUIDE.md#deployments)
-
 ## 🐛 Troubleshooting
 
 Common issues and solutions:
@@ -163,8 +145,6 @@ Common issues and solutions:
 | `Port already in use` | Kill process on port 4000/5173 or use different port |
 | `API calls return 503` | Verify Clerk keys in `.env` |
 | `Products won't load` | Check backend health: `curl http://localhost:4000/health` |
-
-**Full Troubleshooting:** See [API_GUIDE.md Troubleshooting](./API_GUIDE.md#troubleshooting)
 
 ## 📝 Database Schema
 
@@ -187,32 +167,10 @@ Common issues and solutions:
 - ✅ Clerk for secure authentication
 - ✅ Cloudinary signed URLs for uploads
 
-## 📋 Recent Changes
-
-### Fixed Issues
-- ✅ Cleared dummy product data from frontend
-- ✅ Removed exposed credentials from `.env`
-- ✅ Fixed inquiry form to match API requirements (added email, fullName)
-- ✅ Updated database schema for inquiries
-- ✅ Created comprehensive API documentation
-- ✅ Created complete setup guide
-
-### Created Documentation
-- ✅ [API_GUIDE.md](./API_GUIDE.md) - 28KB+ complete API reference
-- ✅ [SETUP_GUIDE.md](./SETUP_GUIDE.md) - Step-by-step setup instructions
-
-## 📞 Support
-
-For issues, questions, or contributions:
-1. Check [API_GUIDE.md](./API_GUIDE.md) for detailed documentation
-2. Review [SETUP_GUIDE.md](./SETUP_GUIDE.md) for setup help
-3. Check [TROUBLESHOOTING](./API_GUIDE.md#troubleshooting) section
-4. Review code in respective folders
-
 ## 📄 License
 
 Project created for luxury furniture e-commerce platform.
 
 ---
 
-**Last Updated:** May 2026 | **Status:** Production Ready (with optional integrations)
+**Last Updated:** May 2026 | **Status:** Production Ready 
